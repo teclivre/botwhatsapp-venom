@@ -2,10 +2,11 @@ import { menu } from '../menu.js';
 import { storage } from '../storage.js';
 import { neighborhoods } from './neighborhoods.js';
 
+
 export const stageOne = {
   exec({ from, message, client }) {
     if (message === '1') {
-      let msg = '🚨  CARDÁPIO  🚨\n\n';
+      let msg = '🤖ASSITENTE VIRTUAL🤖 \n ------------------------------------------------------\n  *Qual serviço deseja orçamento?*  \n\n';
 
       Object.keys(menu).map((value) => {
         const element = menu[value];
@@ -23,24 +24,34 @@ export const stageOne = {
       });
 
       msg +=
-        '\nPara visualizar os bolos, *acesse*: https://wa.me/c/556884257619\n\n⚠️ ```APENAS UMA OPÇÃO POR VEZ``` ⚠️\n*Digite OPÇÃO referente ao produto ao qual deseja pedir:*';
+        '\n\n----------------------------------------------------\n https://rmfacilities.com.br ';
       storage[from].stage = 2;
 
       return msg;
     } else if (message === '2') {
+      storage[from].stage = 0;
       return (
-        '\n-----------------------------------\n1️⃣ - ```FAZER PEDIDO``` \n0️⃣ - ```FALAR COM ATENDENTE```\n\n' +
-        neighborhoods +
-        '\n-----------------------------------\n1️⃣ - ```FAZER PEDIDO``` \n0️⃣ - ```FALAR COM ATENDENTE``` '
+         '🤖 ASSISTENTE VIRTUAL🤖 \n----------------------------------------------------\n\n\n' + neighborhoods + '\n----------------------------------------------------\n  https://rmfacilities.com.br '
       );
     } else if (message === '0') {
       client.markUnseenMessage(from);
 
       storage[from].stage = 5;
 
-      return '🔃 Encaminhando você para um atendente. \n⏳ *Aguarde um instante*.';
-    }
+      return '🤖 ASSISTENTE VIRTUAL🤖\n----------------------------------------------------\n\n🔃 Encaminhando você para um atendente. \n⏳ *Aguarde um instante*.';
+    } else if (message === '3'){
+        storage[from].stage = 0
+        return (
+            'Para compras entrar em contato pelo *e-mail*: \n compras@rmfacilities.com.br \n\n\n *Obrigado por seu contato.* \n----------------------------------------------------\n https://rmfacilities.com.br'
 
-    return '❌ *Digite uma opção válida, por favor.* \n⚠️ ```APENAS UMA OPÇÃO POR VEZ``` ⚠️';
+        );
+          
+    } else{
+        storage[from].stage = 0
+      return(
+        '🤖 ASSISTENTE VIRTUAL🤖 \n Opção invalida. \nPor favor, escolha uma das opções. \n----------------------------------------------------\n 👋 Olá, é um prazer ter você aqui, a _RM FACILITIES_ a empresa número 1 em prestação de serviços de Portaria, Limpeza e Jardinagem agradece seu contato. Para um atendimento personalizado, escolha uma das opções abaixo. 🤝 \n----------------------------------------------------\n1️⃣ - *ORÇAMENTOS* ✔️ \n2️⃣ - *VAGAS* ✔️\n3️⃣ - *COMPRAS* ✔️   \n0️⃣ - *OUTROS* ✔️ \n\n\n\n----------------------------------------------------\n https://rmfacilities.com.br '
+      )
+    }
+    
   },
 };

@@ -1,22 +1,21 @@
+
 export const menu = {
+  
   1: {
-    description: 'Leite Ninho',
-    price: 6,
+    description: '🧽 Limpeza',
   },
   2: {
-    description: 'Alpino',
-    price: 6,
+    description: '🏢 Portaria',
   },
   3: {
-    description: 'Prestígio',
-    price: 6,
+    description: '🏡 Jardinagem',
   },
   4: {
-    description: 'Abacaxi',
-    price: 6,
+    description: '🏛️ Recepção',
   },
   5: {
-    description: 'Dois Amores',
-    price: 6,
+    description: '🛠️ Manutenção',
   },
 };
+
+

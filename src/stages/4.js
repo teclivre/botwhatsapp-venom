@@ -6,6 +6,7 @@ export const stageFour = {
     const phone = from.split('@');
 
     storage[from].stage = 5;
+    
     let desserts = '';
     const itens = storage[from].itens;
     itens.map((item, index) => {
@@ -17,10 +18,10 @@ export const stageFour = {
     });
     const total = storage[from].itens.length;
 
-    return `🔔 *NOVO PEDIDO* 🔔: \n\n📞 Cliente: +${
+    return `🔔 *Descrição* 🔔 \n📞 Telefone: +${
       phone[0]
-    } \n🧁 Sabores: *${desserts}* \n📍 Endereço: *${address}* \n🚚 Taxa de entrega: *a confirmar*. \n💰 Valor dos bolos: *${
-      total * 6
-    },00 reais*. \n⏳ Tempo de entrega: *50 minutos*. \n🛑 Detalhes: *${message}*`;
+    }  \n🔃 Encaminhando você para um atendente. \n⏳ *Aguarde um instante*. \n
+    
+     🛑 Detalhes: \n *${message}*`;
   },
 };

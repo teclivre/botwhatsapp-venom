@@ -1,13 +1,14 @@
 {
-  "name": "botwhatsapp",
+  "name": "botwhatapp-rmfacilites",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "node src/server.js"
   },
   "dependencies": {
+    "superchats": "^2.4.2",
     "venom-bot": "^4.2.0"
   }
 }

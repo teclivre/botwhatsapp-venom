@@ -1,9 +1,12 @@
+// Para executar o programa digite no terminal npm rum dev
+
 import { storage } from '../storage.js';
 
 export const initialStage = {
   exec({ from }) {
     storage[from].stage = 1;
 
-    return '👋 Olá, como vai? \n\nEu sou Carlos, o *assistente virtual* da Delícias da Neide. \n*Posso te ajudar?* 🙋‍♂️ \n-----------------------------------\n1️⃣ - ```FAZER PEDIDO``` \n2️⃣ - ```VERIFICAR TAXA DE ENTREGA```\n0️⃣ - ```FALAR COM ATENDENTE```';
+    return '\n ----------------------------------------------------\n 👋🤖 Olá,  é um prazer ter você aqui, a _RM FACILITIES_ a empresa número 1 em prestação de serviços de Portaria, Limpeza e Jardinagem agradece seu contato. Para um atendimento personalizado, escolha uma das opções abaixo. 🤝 \n----------------------------------------------------\n1️⃣ - *ORÇAMENTOS* ✔️ \n2️⃣ - *VAGAS* ✔️\n3️⃣ - *COMPRAS* ✔️   \n0️⃣ - *OUTROS* ✔️ \n\n\n\n----------------------------------------------------\n https://rmfacilities.com.br ';
   },
 };
+
